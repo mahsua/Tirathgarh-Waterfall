@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tirathgarh Waterfall - Chhattisgarh</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar - Pink Theme */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fdf2f8; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ec4899; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #db2777; 
+        }
+        .hero-pattern {
+            /* Blue to Green gradient overlay over the image */
+            background-color: #1e3a8a;
+            background-image: linear-gradient(rgba(30, 58, 138, 0.5), rgba(6, 78, 59, 0.7)), url('./assets/300-Ft-Cascade.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-gray-50 antialiased selection:bg-pink-500 selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <i data-lucide="waves" class="h-8 w-8 text-white transition-colors duration-300" id="nav-icon"></i>
+                    <span class="font-serif font-bold text-2xl text-white transition-colors duration-300" id="nav-logo">Tirathgarh.</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-white hover:text-pink-300 font-medium transition-colors" id="nav-link-1">History</a>
+                    <a href="#attractions" class="text-white hover:text-pink-300 font-medium transition-colors" id="nav-link-2">Attractions</a>
+                    <a href="#visit" class="text-white hover:text-pink-300 font-medium transition-colors" id="nav-link-3">Plan Visit</a>
+                    <a href="#location" class="text-white hover:text-pink-300 font-medium transition-colors" id="nav-link-4">Location</a>
+                    <a href="https://technology.mahsua.com/pages/donate.html" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 bg-pink-600 hover:bg-pink-500 text-white text-sm font-medium rounded-full transition-colors shadow-lg shadow-pink-500/30">
+                        <i data-lucide="heart" class="h-4 w-4 text-white"></i> Donate
+                    </a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-white hover:text-pink-200 focus:outline-none">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-xl absolute w-full">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t">
+                <a href="#about" class="block px-3 py-2 text-gray-800 hover:bg-pink-50 hover:text-pink-600 rounded-md font-medium">History</a>
+                <a href="#attractions" class="block px-3 py-2 text-gray-800 hover:bg-pink-50 hover:text-pink-600 rounded-md font-medium">Attractions</a>
+                <a href="#visit" class="block px-3 py-2 text-gray-800 hover:bg-pink-50 hover:text-pink-600 rounded-md font-medium">Plan Visit</a>
+                <a href="#location" class="block px-3 py-2 text-gray-800 hover:bg-pink-50 hover:text-pink-600 rounded-md font-medium">Location</a>
+                <a href="https://technology.mahsua.com/pages/donate.html" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-3 py-2 text-pink-600 hover:bg-pink-50 rounded-md font-medium mt-2 border-t border-gray-100 pt-2">
+                    <i data-lucide="heart" class="h-4 w-4"></i> Donate
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-pattern h-screen flex items-center justify-center relative">
+        <div class="text-center px-4 z-10 max-w-4xl mx-auto">
+            <span class="text-pink-300 font-medium tracking-widest uppercase mb-4 block text-sm sm:text-base">Kanger Valley National Park, Chhattisgarh</span>
+            <h1 class="text-5xl sm:text-7xl font-serif font-bold text-white mb-6 drop-shadow-lg">Tirathgarh Waterfall</h1>
+            <p class="text-lg sm:text-xl text-blue-50 mb-10 max-w-2xl mx-auto leading-relaxed">
+                A 300-foot tiered marvel shaped by ancient tectonic activity. Discover a biodiverse ecological hotspot and a sacred pilgrimage site.
+            </p>
+            <a href="#about" class="inline-flex items-center justify-center px-8 py-3.5 text-base font-medium text-white bg-pink-500 rounded-full hover:bg-pink-600 transition-all hover:scale-105 shadow-lg shadow-pink-500/30">
+                Explore the Falls
+                <i data-lucide="arrow-down" class="ml-2 h-5 w-5"></i>
+            </a>
+        </div>
+        <div class="absolute bottom-10 animate-bounce">
+            <i data-lucide="chevron-down" class="h-8 w-8 text-emerald-300 opacity-80"></i>
+        </div>
+    </section>
+
+    <!-- History & Intro Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-blue-900 mb-4">The Tapestry of Time</h2>
+                <div class="w-24 h-1 bg-pink-500 mx-auto rounded"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Geological & Mythological -->
+                <div class="space-y-8">
+                    <div class="bg-emerald-50 p-8 rounded-2xl border border-emerald-100 hover:shadow-lg transition-shadow">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="p-3 bg-blue-500 rounded-lg text-white"><i data-lucide="mountain"></i></div>
+                            <h3 class="text-xl font-bold text-blue-900">Geological Origins</h3>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
+                            Spanning hundreds of millions of years back to the neo-Proterozoic epoch. The Bastar region was once submerged beneath the Indravati Basin, depositing sandstone. Extreme tectonic violence and silicic magmatism fractured this stone, creating structural faults that the Kanger River eroded to form the stepped, multi-tiered waterfall.
+                        </p>
+                    </div>
+
+                    <div class="bg-blue-50 p-8 rounded-2xl border border-blue-100 hover:shadow-lg transition-shadow">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="p-3 bg-pink-500 rounded-lg text-white"><i data-lucide="book-open"></i></div>
+                            <h3 class="text-xl font-bold text-blue-900">Mythological Ties</h3>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
+                            Interwoven with the Ramayana epic. Lord Rama, Goddess Sita, and Laxman are believed to have visited during their 14-year exile in the Dandakaranya forest. Natural pools here are revered as <strong>Sita Kund</strong> and <strong>Rama Kund</strong>. Local macaque populations represent the Ramdoot KapiSena.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Medieval & Modern -->
+                <div class="space-y-8">
+                    <div class="bg-pink-50 p-8 rounded-2xl border border-pink-100 hover:shadow-lg transition-shadow">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="p-3 bg-emerald-500 rounded-lg text-white"><i data-lucide="castle"></i></div>
+                            <h3 class="text-xl font-bold text-blue-900">Medieval History</h3>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
+                            Dating back to the 11th century, local noble brothers Tirathraj and Chingraj developed the area. Tirathraj founded Tirathgarh on the upper plateau, constructing heavy stone fortifications (garhs) along the river. Moss-covered ruins of these ancient defensive structures remain visible today.
+                        </p>
+                    </div>
+
+                    <div class="bg-emerald-50 p-8 rounded-2xl border border-emerald-100 hover:shadow-lg transition-shadow">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="p-3 bg-blue-500 rounded-lg text-white"><i data-lucide="leaf"></i></div>
+                            <h3 class="text-xl font-bold text-blue-900">Modern Recognition</h3>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
+                            Formally recognized with the establishment of Kanger Valley National Park on July 22, 1982. Following policy shifts in the 1980s, it rapidly evolved from isolated wilderness to a premier eco-tourism destination, balancing massive visitor numbers with strict environmental conservation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Attractions -->
+    <section id="attractions" class="py-20 bg-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-blue-900 mb-4">Top Attractions</h2>
+                <div class="w-24 h-1 bg-emerald-500 mx-auto rounded"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-2xl shadow-sm border border-blue-100 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="./assets/Unique-Wildlife.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 h-10 w-10 bg-white/90 backdrop-blur text-pink-500 rounded-full flex items-center justify-center shadow-md">
+                            <i data-lucide="droplets" class="h-5 w-5"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-lg font-bold text-blue-900 mb-2">300-Ft Cascade</h3>
+                        <p class="text-gray-600 text-sm flex-1">This is the iconic view from the main rim. You can watch the Mungabahar River suddenly drop over a massive cliff, splitting into white, frothy channels against the dark black rocks.</p>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-white rounded-2xl shadow-sm border border-blue-100 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="./assets/200-Step-Descent.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 h-10 w-10 bg-white/90 backdrop-blur text-blue-500 rounded-full flex items-center justify-center shadow-md">
+                            <i data-lucide="footprints" class="h-5 w-5"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-lg font-bold text-blue-900 mb-2">200-Step Descent</h3>
+                        <p class="text-gray-600 text-sm flex-1">Carefully constructed pathways allow physically fit tourists to reach the absolute base for an immersive experience.You can walk down a well-built flight of steps into the gorge. </p>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-white rounded-2xl shadow-sm border border-blue-100 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="./assets/Sacred-Shivalayas.jpg" alt="Sacred Shivalayas" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 h-10 w-10 bg-white/90 backdrop-blur text-emerald-500 rounded-full flex items-center justify-center shadow-md">
+                            <i data-lucide="gem" class="h-5 w-5"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-lg font-bold text-blue-900 mb-2">Sacred Shivalayas</h3>
+                        <p class="text-gray-600 text-sm flex-1">Revered Shiva temples with ancient Nandi idols positioned on the flanks, highly active during Mahashivratri. A small, historic Hindu temple built directly on top of a massive boulder right in front of the middle tier of the waterfall.</p>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="bg-white rounded-2xl shadow-sm border border-blue-100 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="./assets/food.png" alt="Sita & Rama Kund" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 h-10 w-10 bg-white/90 backdrop-blur text-pink-500 rounded-full flex items-center justify-center shadow-md">
+                            <i data-lucide="sparkles" class="h-5 w-5"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-lg font-bold text-blue-900 mb-2">The Local Bastar Snack Stalls</h3>
+                        <p class="text-gray-600 text-sm flex-1">Right near the upper viewing area and parking lot, you can taste authentic local Bastar tribal snacks. Local vendors sell fresh, hot Chila, Fara, and wild forest fruits, giving you a literal taste of the local culture.</p>
+                    </div>
+                </div>
+                <!-- Card 5 -->
+                <div class="bg-white rounded-2xl shadow-sm border border-blue-100 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="./assets/Pool.jpg" alt="11th-Century Ruins" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 h-10 w-10 bg-white/90 backdrop-blur text-blue-500 rounded-full flex items-center justify-center shadow-md">
+                            <i data-lucide="landmark" class="h-5 w-5"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-lg font-bold text-blue-900 mb-2">The Bottom Plunge Pool</h3>
+                        <p class="text-gray-600 text-sm flex-1">At the very base of the steps, you reach the lowest tier. Here, the water pools together before continuing into the jungle, creating a misty area perfect for photography.</p>
+                    </div>
+                </div>
+                <!-- Card 6 -->
+                <div class="bg-white rounded-2xl shadow-sm border border-blue-100 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="./assets/Wildlife.jpg" alt="Unique Wildlife" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 h-10 w-10 bg-white/90 backdrop-blur text-emerald-500 rounded-full flex items-center justify-center shadow-md">
+                            <i data-lucide="bird" class="h-5 w-5"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-lg font-bold text-blue-900 mb-2">Monkey & Bird Watching Areas</h3>
+                        <p class="text-gray-600 text-sm flex-1">The tall trees surrounding the waterfall steps are filled with local wildlife. You can easily spot langurs and colourful forest birds resting near the canopy.</p>
+                    </div>
+                </div>
+                <!-- Card 7 -->
+                <div class="bg-white rounded-2xl shadow-sm border border-blue-100 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="./assets/rock-bed.jpg" alt="Limestone Caves" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 h-10 w-10 bg-white/90 backdrop-blur text-pink-500 rounded-full flex items-center justify-center shadow-md">
+                            <i data-lucide="moon" class="h-5 w-5"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-lg font-bold text-blue-900 mb-2">The Upper Valley Viewpoint</h3>
+                        <p class="text-gray-600 text-sm flex-1">Before walking down the steps, stand at the fenced upper edge. It offers a sweeping, panoramic view of the deep green forest valley cutting through the hills.</p>
+                    </div>
+                </div>
+                <!-- Card 8 -->
+                <div class="bg-white rounded-2xl shadow-sm border border-blue-100 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="./assets/uppervally-point-view.jpg" alt="Tribal Arts & Crafts" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 h-10 w-10 bg-white/90 backdrop-blur text-blue-500 rounded-full flex items-center justify-center shadow-md">
+                            <i data-lucide="palette" class="h-5 w-5"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-lg font-bold text-blue-900 mb-2">The Rocky River Bed</h3>
+                        <p class="text-gray-600 text-sm flex-1">Before the water plunges over the cliff, you can see the wide, flat rocky bed of the Mungabahar River from the safety of the upper viewing barriers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plan Your Visit (Fees, Timing, Best time) -->
+    <section id="visit" class="py-20 bg-blue-900 text-white relative overflow-hidden">
+        <!-- Background Decoration -->
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="w-full h-full fill-current text-pink-300"><path d="M0 100 C 20 0 50 0 100 100 Z"></path></svg>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold mb-4">Plan Your Visit</h2>
+                <div class="w-24 h-1 bg-pink-500 mx-auto rounded"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <!-- Timing & Seasons -->
+                <div class="glass-card rounded-2xl p-8 text-gray-900 shadow-xl shadow-blue-900/50">
+                    <h3 class="text-2xl font-bold mb-6 flex items-center gap-3 text-blue-900"><i data-lucide="clock" class="text-pink-500"></i> Timings & Seasons</h3>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <p class="font-bold text-gray-800">Standard Hours</p>
+                            <p class="text-gray-600 text-sm">08:00 AM - 04:00 PM (Universally open). Peripheral access up to 05:00 PM based on gates.</p>
+                        </div>
+                        <div>
+                            <p class="font-bold text-emerald-600">Best Time to Visit</p>
+                            <p class="text-gray-600 text-sm"><strong>October to February.</strong> Mild weather, safe access to pools, and pure white cascade.</p>
+                        </div>
+                        <div class="bg-pink-50 p-4 rounded-lg border border-pink-200">
+                            <p class="font-bold text-pink-700 flex items-center gap-2"><i data-lucide="alert-triangle" class="h-4 w-4"></i> Monsoon Caution</p>
+                            <p class="text-pink-600 text-xs mt-1">July to September poses safety hazards. Base access and nearby caves are often strictly closed due to flash flood risks.</p>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg border border-blue-100">
+                            <p class="font-bold text-blue-800 text-sm flex items-center gap-2"><i data-lucide="moon" class="h-4 w-4"></i> Nighttime</p>
+                            <p class="text-blue-700 text-xs mt-1">Night visits are strictly prohibited for security.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fees -->
+                <div class="glass-card rounded-2xl p-8 text-gray-900 shadow-xl shadow-blue-900/50">
+                    <h3 class="text-2xl font-bold mb-6 flex items-center gap-3 text-blue-900"><i data-lucide="ticket" class="text-emerald-500"></i> Entry Fees</h3>
+                    
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex justify-between items-center border-b border-gray-100 pb-2">
+                            <span>Indian Adult</span> <span class="font-bold text-blue-700">₹25</span>
+                        </li>
+                        <li class="flex justify-between items-center border-b border-gray-100 pb-2">
+                            <span>Foreigner Adult</span> <span class="font-bold text-blue-700">₹150</span>
+                        </li>
+                        <li class="flex justify-between items-center border-b border-gray-100 pb-2">
+                            <span>Children (Under 12)</span> <span class="font-bold text-emerald-600">Free</span>
+                        </li>
+                        <li class="flex justify-between items-center border-b border-gray-100 pb-2">
+                            <span class="text-gray-500">Site Fee (>12 yrs)</span> <span class="font-bold">₹25</span>
+                        </li>
+                        <li class="flex justify-between items-center border-b border-gray-100 pb-2">
+                            <span class="text-gray-500">Biodiversity Cess (>12 yrs)</span> <span class="font-bold">₹25</span>
+                        </li>
+                        <li class="flex justify-between items-center border-b border-gray-100 pb-2">
+                            <span>Vehicle Entry (Car/SUV)</span> <span class="font-bold">₹25 - ₹50</span>
+                        </li>
+                        <li class="flex justify-between items-center pt-2">
+                            <span class="text-pink-600 font-medium">Official Park Guide</span> <span class="font-bold text-pink-600">₹300</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Photography & Facilities -->
+                <div class="glass-card rounded-2xl p-8 text-gray-900 shadow-xl shadow-blue-900/50">
+                    <h3 class="text-2xl font-bold mb-6 flex items-center gap-3 text-blue-900"><i data-lucide="camera" class="text-blue-500"></i> Facilities & Rules</h3>
+                    
+                    <div class="mb-6">
+                        <p class="font-bold text-gray-800 mb-2">Photography Surcharges</p>
+                        <div class="flex justify-between items-center text-sm mb-2">
+                            <span>Digital Still Camera</span> <span class="font-bold">₹25</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm">
+                            <span>Video Camera</span> <span class="font-bold">₹200</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="font-bold text-gray-800 mb-3">Available Facilities</p>
+                        <ul class="space-y-3 text-sm text-gray-600">
+                            <li class="flex gap-2"><i data-lucide="check-circle" class="h-4 w-4 text-emerald-500 shrink-0 mt-0.5"></i> Structured parking for cars & tourist vehicles.</li>
+                            <li class="flex gap-2"><i data-lucide="check-circle" class="h-4 w-4 text-emerald-500 shrink-0 mt-0.5"></i> Restrooms & changing rooms on-site.</li>
+                            <li class="flex gap-2"><i data-lucide="check-circle" class="h-4 w-4 text-emerald-500 shrink-0 mt-0.5"></i> Food stalls at entrance (carry own food if trekking down).</li>
+                            <li class="flex gap-2"><i data-lucide="check-circle" class="h-4 w-4 text-emerald-500 shrink-0 mt-0.5"></i> Local expert guides available.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="py-20 bg-pink-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-blue-900 mb-4">Visitor Experiences</h2>
+                <div class="w-24 h-1 bg-emerald-500 mx-auto rounded"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Review 1 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-pink-100 hover:shadow-md transition-shadow">
+                    <div class="flex text-pink-400 mb-4">
+                        <i data-lucide="star" class="fill-current h-4 w-4"></i><i data-lucide="star" class="fill-current h-4 w-4"></i><i data-lucide="star" class="fill-current h-4 w-4"></i><i data-lucide="star" class="fill-current h-4 w-4"></i><i data-lucide="star" class="fill-current h-4 w-4"></i>
+                    </div>
+                    <p class="text-gray-600 text-sm italic mb-4">"The multi-tier cascade flowing down wide rock formations creates a stunning white-curtain effect that feels almost magical."</p>
+                    <p class="font-bold text-blue-900 text-sm">- nani narendra</p>
+                </div>
+                <!-- Review 2 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-pink-100 hover:shadow-md transition-shadow">
+                    <div class="flex text-pink-400 mb-4">
+                        <i data-lucide="star" class="fill-current h-4 w-4"></i><i data-lucide="star" class="fill-current h-4 w-4"></i><i data-lucide="star" class="fill-current h-4 w-4"></i><i data-lucide="star" class="fill-current h-4 w-4"></i><i data-lucide="star" class="fill-current h-4 w-4"></i>
+                    </div>
+                    <p class="text-gray-600 text-sm italic mb-4">"No wait to enter on a weekday! Highly recommend visiting between November and January for the best experience!"</p>
+                    <p class="font-bold text-blue-900 text-sm">- Apurba</p>
+                </div>
+                <!-- Review 3 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-pink-100 hover:shadow-md transition-shadow">
+                    <div class="flex text-pink-400 mb-4">
+                        <i data-lucide="star" class="fill-current h-4 w-4"></i><i data-lucide="star" class="fill-current h-4 w-4"></i><i data-lucide="star" class="fill-current h-4 w-4"></i><i data-lucide="star" class="fill-current h-4 w-4"></i><i data-lucide="star" class="fill-current h-4 w-4"></i>
+                    </div>
+                    <p class="text-gray-600 text-sm italic mb-4">"If you love mini-trekking adventure then this is for you. Get down couple hundred feet to enjoy water at the flat surface."</p>
+                    <p class="font-bold text-blue-900 text-sm">- Sougata Pal</p>
+                </div>
+                <!-- Review 4 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-pink-100 hover:shadow-md transition-shadow">
+                    <div class="flex text-pink-400 mb-4">
+                        <i data-lucide="star" class="fill-current h-4 w-4"></i><i data-lucide="star" class="fill-current h-4 w-4"></i><i data-lucide="star" class="fill-current h-4 w-4"></i><i data-lucide="star" class="fill-current h-4 w-4"></i><i data-lucide="star" class="h-4 w-4"></i>
+                    </div>
+                    <p class="text-gray-600 text-sm italic mb-4">"Amazing place, truly unique water fall... Overall this can be developed into a much better place in the liked of Niagara."</p>
+                    <p class="font-bold text-blue-900 text-sm">- Debadutta Mishra</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Transport Section -->
+    <section id="location" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-blue-900 mb-4">How to Reach</h2>
+                <div class="w-24 h-1 bg-pink-500 mx-auto rounded"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <!-- Map Embed -->
+                <div class="w-full h-[450px] rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1727.4711627249167!2d81.86373972212202!3d18.91415322820844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a304200196426ad%3A0xd6d1181c01e420a9!2sTirathgarh%20Waterfall%20Jagdalpur%20Chhattisgarh!5e1!3m2!1sen!2sin!4v1779273499119!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+                <!-- Transport Info -->
+                <div class="space-y-6">
+                    <div class="flex gap-4">
+                        <div class="mt-1"><div class="h-10 w-10 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center"><i data-lucide="car"></i></div></div>
+                        <div>
+                            <h4 class="text-lg font-bold text-blue-900 mb-1">By Road (Own Vehicle)</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">Most convenient. Approx 35-40 km from Jagdalpur city. Follow NH 30 (Jagdalpur-Sukma road) to Darbha, then take the turn-off onto Tirathgarh Road. Drive takes ~1 hour through scenic forests.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-4">
+                        <div class="mt-1"><div class="h-10 w-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center"><i data-lucide="bus"></i></div></div>
+                        <div>
+                            <h4 class="text-lg font-bold text-blue-900 mb-1">Public Transport</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">No direct bus. Take a bus to Jagdalpur, then local bus/shared jeep to Darbha junction. Finally, hire a private jeep/auto-rickshaw into the Kanger Valley National Park.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="mt-1"><div class="h-10 w-10 bg-pink-100 text-pink-600 rounded-full flex items-center justify-center"><i data-lucide="train"></i></div></div>
+                        <div>
+                            <h4 class="text-lg font-bold text-blue-900 mb-1">By Train</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">Nearest railhead: <strong>Jagdalpur Railway Station (JDB)</strong>, ~35 km away. Connected to Raipur, Visakhapatnam, Bhubaneswar. Taxis/autos available at station.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="mt-1"><div class="h-10 w-10 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center"><i data-lucide="plane"></i></div></div>
+                        <div>
+                            <h4 class="text-lg font-bold text-blue-900 mb-1">By Air</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">Nearest airport: <strong>Maa Danteshwari Airport</strong> in Jagdalpur, approx 36 km away.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Nearby Attractions Box -->
+            <div class="mt-16 bg-blue-50 border border-blue-100 rounded-2xl p-8">
+                <h3 class="text-xl font-bold text-blue-900 mb-6 flex items-center gap-2"><i data-lucide="map-pin" class="text-pink-500"></i> Nearby Attractions</h3>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Card 1 -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-blue-100 hover:shadow-md transition-shadow relative overflow-hidden group flex flex-col">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="./assets/kotumsar-cave.jpg" alt="Kotumsar Cave" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-4 right-4 h-10 w-10 bg-white/90 backdrop-blur text-blue-600 rounded-full flex items-center justify-center shadow-md">
+                                <i data-lucide="compass" class="h-5 w-5"></i>
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-1">
+                            <h4 class="font-bold text-blue-900 text-lg mb-1">Kotumsar Cave</h4>
+                            <p class="text-xs font-semibold text-emerald-600 mb-3 flex items-center gap-1"><i data-lucide="navigation" class="h-3 w-3"></i> ~5 kilometres away</p>
+                            <p class="text-sm text-gray-600 leading-relaxed mb-5">A stunning, multi-chambered underground limestone cave featuring massive natural pillars of stalactites and stalagmites. It is completely pitch-black inside.</p>
+                            <a href="https://maps.app.goo.gl/b3GFW2o5HVtDvEpN8" target="_blank" rel="noopener noreferrer" class="mt-auto inline-flex items-center justify-center w-full py-2.5 px-4 bg-pink-50 text-pink-700 hover:bg-pink-500 hover:text-white font-semibold text-sm rounded-lg transition-colors border border-pink-100 hover:border-pink-500">
+                                <i data-lucide="map" class="h-4 w-4 mr-2"></i> View or Visit Place
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 2 -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-blue-100 hover:shadow-md transition-shadow relative overflow-hidden group flex flex-col">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="./assets/dandak-cave.jpg" alt="Dandak Cave" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-4 right-4 h-10 w-10 bg-white/90 backdrop-blur text-blue-600 rounded-full flex items-center justify-center shadow-md">
+                                <i data-lucide="compass" class="h-5 w-5"></i>
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-1">
+                            <h4 class="font-bold text-blue-900 text-lg mb-1">Dandak Cave</h4>
+                            <p class="text-xs font-semibold text-emerald-600 mb-3 flex items-center gap-1"><i data-lucide="navigation" class="h-3 w-3"></i> ~9 kilometres away</p>
+                            <p class="text-sm text-gray-600 leading-relaxed mb-5">Discovered deep inside the national park, this massive cave system consists of two colossal chambers. Reaching it involves a scenic, short forest trek from the main road.</p>
+                            <a href="https://maps.app.goo.gl/xotyKwN27gRpUTkx8" target="_blank" rel="noopener noreferrer" class="mt-auto inline-flex items-center justify-center w-full py-2.5 px-4 bg-pink-50 text-pink-700 hover:bg-pink-500 hover:text-white font-semibold text-sm rounded-lg transition-colors border border-pink-100 hover:border-pink-500">
+                                <i data-lucide="map" class="h-4 w-4 mr-2"></i> View or Visit Place
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-blue-100 hover:shadow-md transition-shadow relative overflow-hidden group flex flex-col">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="./assets/dhudmaras-village.jpg" alt="Dhudmaras Eco-Village" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-4 right-4 h-10 w-10 bg-white/90 backdrop-blur text-blue-600 rounded-full flex items-center justify-center shadow-md">
+                                <i data-lucide="compass" class="h-5 w-5"></i>
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-1">
+                            <h4 class="font-bold text-blue-900 text-lg mb-1">Dhudmaras Eco-Village</h4>
+                            <p class="text-xs font-semibold text-emerald-600 mb-3 flex items-center gap-1"><i data-lucide="navigation" class="h-3 w-3"></i> ~11 kilometres away</p>
+                            <p class="text-sm text-gray-600 leading-relaxed mb-5">Awarded as one of the best tourism villages, it sits right along the Kanger River. The go-to spot for bamboo rafting, kayaking, and seeing local tribal lifestyles.</p>
+                            <a href="https://maps.app.goo.gl/7X78T7hwfPVq7A1b7" target="_blank" rel="noopener noreferrer" class="mt-auto inline-flex items-center justify-center w-full py-2.5 px-4 bg-pink-50 text-pink-700 hover:bg-pink-500 hover:text-white font-semibold text-sm rounded-lg transition-colors border border-pink-100 hover:border-pink-500">
+                                <i data-lucide="map" class="h-4 w-4 mr-2"></i> View or Visit Place
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-blue-100 hover:shadow-md transition-shadow relative overflow-hidden group flex flex-col">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="./assets/kailash-cave.jpg" alt="Kailash Cave" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-4 right-4 h-10 w-10 bg-white/90 backdrop-blur text-blue-600 rounded-full flex items-center justify-center shadow-md">
+                                <i data-lucide="compass" class="h-5 w-5"></i>
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-1">
+                            <h4 class="font-bold text-blue-900 text-lg mb-1">Kailash Cave</h4>
+                            <p class="text-xs font-semibold text-emerald-600 mb-3 flex items-center gap-1"><i data-lucide="navigation" class="h-3 w-3"></i> ~16 kilometres away</p>
+                            <p class="text-sm text-gray-600 leading-relaxed mb-5">An ancient cave perched on a small hillock. Famous for a unique stalagmite structure that perfectly resembles a Shivalinga and incredible sound echoes inside.</p>
+                            <a href="https://maps.app.goo.gl/Yg7M4pR2mE9Szv9d6" target="_blank" rel="noopener noreferrer" class="mt-auto inline-flex items-center justify-center w-full py-2.5 px-4 bg-pink-50 text-pink-700 hover:bg-pink-500 hover:text-white font-semibold text-sm rounded-lg transition-colors border border-pink-100 hover:border-pink-500">
+                                <i data-lucide="map" class="h-4 w-4 mr-2"></i> View or Visit Place
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-slate-800 text-center py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-slate-200 text-sm mb-2 font-medium tracking-wide">Copyright by "Tirathgarh Waterfall Jagdalpur Chhattisgarh"</p>
+            <p class="text-slate-300 text-xm">Developed by <a href="https://technology.mahsua.com/" target="_blank" rel="noopener noreferrer" class="text-pink-400 hover:text-pink-300 transition-colors">Mahsua Technology</a> With INDIA (Free and Open-Source)</p>
+            <div class="mt-6 flex justify-center space-x-4">
+                <a href="./disclaimer.html" class="px-6 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium rounded-lg transition-all shadow-lg shadow-blue-600/20 inline-block">Disclaimer</a>
+                <a href="https://technology.mahsua.com/pages/donate.html" target="_blank" rel="noopener noreferrer" class="px-6 py-2.5 bg-pink-600 hover:bg-pink-500 text-white text-sm font-medium rounded-lg transition-all flex items-center gap-2 inline-flex shadow-lg shadow-pink-600/20"><i data-lucide="heart" class="h-4 w-4"></i> Donate</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            const navIcon = document.getElementById('nav-icon');
+            const navLogo = document.getElementById('nav-logo');
+            const links = [
+                document.getElementById('nav-link-1'),
+                document.getElementById('nav-link-2'),
+                document.getElementById('nav-link-3'),
+                document.getElementById('nav-link-4'),
+            ];
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-white', 'shadow-md');
+                navIcon.classList.remove('text-white');
+                navIcon.classList.add('text-blue-600');
+                navLogo.classList.remove('text-white');
+                navLogo.classList.add('text-blue-900');
+                mobileBtn.classList.remove('text-white');
+                mobileBtn.classList.add('text-blue-900');
+                links.forEach(link => {
+                    link.classList.remove('text-white');
+                    link.classList.add('text-gray-600');
+                });
+            } else {
+                nav.classList.remove('bg-white', 'shadow-md');
+                navIcon.classList.add('text-white');
+                navIcon.classList.remove('text-blue-600');
+                navLogo.classList.add('text-white');
+                navLogo.classList.remove('text-blue-900');
+                mobileBtn.classList.add('text-white');
+                mobileBtn.classList.remove('text-blue-900');
+                links.forEach(link => {
+                    link.classList.add('text-white');
+                    link.classList.remove('text-gray-600');
+                });
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
